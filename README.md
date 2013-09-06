@@ -1,4 +1,4 @@
 alocrafty.js
 ============
 
-A javascript library to generate HTML output
+A javascript library to generate HTML
