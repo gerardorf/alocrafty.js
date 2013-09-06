@@ -1,3 +1,3 @@
-HTML=function() {
+html=function() {
   return '<html></html>';
 }
