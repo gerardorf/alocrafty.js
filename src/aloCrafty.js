@@ -1,3 +1,9 @@
+var ALC={}
+
+ALC.tag  = function (tag){
+  return '<'+tag+'></'+tag+'>'
+}
+
 html=function() {
-  return '<html></html>';
+  return ALC.tag('html');
 }
