@@ -7,8 +7,12 @@ describe("a lo crafty", function() {
     expect(html('arbitrary content')).toEqual('<html>arbitrary content</html>');
   });
 
-  it("generates html tag with an inner tag", function() {
-    expect(html(title('arbitrary title'))).toEqual('<html><title>arbitrary title</title></html>');
+  it("generates html tag with a nested tag", function() {
+    var testHtml = '<html><title>arbitrary title</title></html>';
+    var output =  html(
+                    title('arbitrary title')
+                  );
+    expect(output).toEqual(testHtml);
   });
 
 });
