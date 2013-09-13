@@ -25,3 +25,7 @@ ALC.serializeContent = function (content){
 html=function() {
   return ALC.tag('html', arguments);
 }
+
+title=function() {
+  return ALC.tag('title', arguments);
+}
