@@ -15,4 +15,10 @@ describe("a lo crafty", function() {
     expect(output).toEqual(testHtml);
   });
 
+  it("allows adding tag attributes as a map", function() {
+    var testHtml = '<body class="test_class" id="main"></body>';
+    var output =  body({class:'test_class', id:'main'});
+    expect(output).toEqual(testHtml);
+  });
+
 });

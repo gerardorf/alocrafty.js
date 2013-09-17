@@ -1,13 +1,35 @@
 var ALC={}
 
+ALC.startMarkUp = '<';
+ALC.endMarkUp = '>';
+
 ALC.tag  = function (tag, args){
-  return ALC.openTag(tag)
+  return ALC.startMarkUp
+        +ALC.serializeTag(tag)
+        +ALC.serializeAttributes(args)
+        +ALC.endMarkUp
         +ALC.serializeContent(args)
         +ALC.closeTag(tag);
 }
 
-ALC.openTag = function (tag) {
-  return '<'+tag+'>'
+ALC.serializeAttributes = function (atts){
+  var attributes;
+  if (typeof atts[0]==='object'){
+    attributes=Array.prototype.shift.call(atts);
+  }
+  return ALC.writeAttributes(attributes);
+}
+
+ALC.writeAttributes = function (atts){
+  var output='';
+  for (var att in atts){
+    output += ' '+att+'="'+atts[att]+'"' ;
+  }
+  return output;
+}
+
+ALC.serializeTag = function (tag) {
+  return tag;
 }
 
 ALC.closeTag = function (tag) {
@@ -28,4 +50,8 @@ html=function() {
 
 title=function() {
   return ALC.tag('title', arguments);
+}
+
+body=function() {
+  return ALC.tag('body', arguments);
 }
