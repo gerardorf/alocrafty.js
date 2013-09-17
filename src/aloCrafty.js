@@ -13,11 +13,16 @@ ALC.tag  = function (tag, args){
 }
 
 ALC.serializeAttributes = function (atts){
+  attributes = ALC.extractAttributes(atts);
+  return ALC.writeAttributes(attributes);
+}
+
+ALC.extractAttributes = function (atts){
   var attributes;
   if (typeof atts[0]==='object'){
     attributes=Array.prototype.shift.call(atts);
   }
-  return ALC.writeAttributes(attributes);
+  return attributes;
 }
 
 ALC.writeAttributes = function (atts){
