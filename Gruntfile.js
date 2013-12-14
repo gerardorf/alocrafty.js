@@ -48,19 +48,12 @@ module.exports = function(grunt) {
     mocha_phantomjs: {
       all: {
         options: {
-          urls: [ 'http://localhost:8000/specs/SpecRunner.html' ]
+          urls: [
+            'http://localhost:8000/spec/SpecRunner.html'
+          ]
         }
       }
     },
-
-    qunit: {
-      all: {
-        options: {
-          urls: [ 'http://localhost:8000/specs/SpecRunner.html' ]
-        }
-      }
-    },
-
     connect: {
       server: {
         options: {
@@ -79,15 +72,17 @@ module.exports = function(grunt) {
 
   // Dependencies
   grunt.loadNpmTasks( 'grunt-contrib-qunit' );
+  // Code analysis
   grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+  // Minize javascript
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+  // watch changes
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
-  // Jasmine tasks.
-  grunt.loadNpmTasks('grunt-jasmine-html-spec-runner');
 
   // This plugin provides the "connect" task.
   grunt.loadNpmTasks('grunt-contrib-connect');
 
+  // Load mocha phantomjs
   grunt.loadNpmTasks('grunt-mocha-phantomjs');
 
   // prepare code task

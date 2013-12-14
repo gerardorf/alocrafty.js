@@ -19,10 +19,10 @@
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-jasmine-html-spec-runner": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-mocha-phantomjs": "latest",
-    "grunt-jasmine-task": "latest",
+    "chai": "~1.7.x",
+    "mocha": "~1.12.x",
     "grunt": "latest"
   },
   "author": "",
