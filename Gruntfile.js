@@ -37,8 +37,37 @@ module.exports = function(grunt) {
     },
 
     jasmine: {
-      all: ['specs/SpecRunner.html'],
+      // Your project's source files
+      src : 'src/*.js',
+      // Your Jasmine spec files
+      specs : 'spec/*Spec.js',
       errorReporting: true
+    },
+
+    // Project configuration.
+    mocha_phantomjs: {
+      all: {
+        options: {
+          urls: [ 'http://localhost:8000/specs/SpecRunner.html' ]
+        }
+      }
+    },
+
+    qunit: {
+      all: {
+        options: {
+          urls: [ 'http://localhost:8000/specs/SpecRunner.html' ]
+        }
+      }
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: '.'
+        }
+      }
     },
 
     watch: {
@@ -56,8 +85,16 @@ module.exports = function(grunt) {
   // Jasmine tasks.
   grunt.loadNpmTasks('grunt-jasmine-html-spec-runner');
 
-  // Default task
-  grunt.registerTask( 'test', [ 'jshint', 'uglify', 'jasmine' ] );
+  // This plugin provides the "connect" task.
+  grunt.loadNpmTasks('grunt-contrib-connect');
+
+  grunt.loadNpmTasks('grunt-mocha-phantomjs');
+
+  // prepare code task
+  grunt.registerTask( 'prepare', [ 'jshint', 'uglify' ] );
+
+  // A convenient task alias.
+  grunt.registerTask('test', [ 'prepare', 'connect', 'mocha_phantomjs']);
 
   // Tests
   grunt.registerTask('default', ['test']);
