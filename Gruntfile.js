@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           unescape: false
         }
       },
-      files: [ 'Gruntfile.js', 'src/aloCrafty.js', 'spec/aloCraftySpec.js' ]
+      files: [ 'Gruntfile.js', 'src/aloCrafty.js' ]
     },
 
     jasmine: {
