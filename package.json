@@ -1,0 +1,32 @@
+{
+  "name": "aloCrafty",
+  "version": "1.0.0",
+  "description": "alocrafty framework",
+  "main": "src/aloCrafty.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ricardogarfe/alocrafty.js.git"
+  },
+  "engines": {
+  "node": "~0.8.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "latest",
+    "grunt-contrib-qunit": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-mocha-phantomjs": "latest",
+    "chai": "~1.7.x",
+    "mocha": "~1.12.x",
+    "grunt": "latest"
+  },
+  "author": "",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "902b787305d0e43fde7a836adf9bd7b0b48f7fe2"
+}

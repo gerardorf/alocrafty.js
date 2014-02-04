@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>A Lo Crafty Jasmine Spec Runner</title>
+
+  <div id="mocha"></div>
+  <script src="../node_modules/mocha/mocha.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../node_modules/chai/chai.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+      mocha.ui('bdd');
+      expect = chai.expect;
+  </script>
+
+  <!-- include source files here... -->
+  <script type="text/javascript" src="../src/aloCrafty.js"></script>
+  <script type="text/javascript" src="aloCraftySpec.js" charset="utf-8"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+    else { mocha.run(); }
+  </script>
+
+</head>
+
+<body>
+</body>
+</html>
