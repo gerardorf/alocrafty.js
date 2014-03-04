@@ -5,7 +5,7 @@ ALC.endMarkUp = '>';
 
 ALC.tag  = function (tag, args){
   return ALC.startMarkUp
-        +ALC.serializeTag(tag)
+        +tag
         +ALC.serializeAttributes(args)
         +ALC.endMarkUp
         +ALC.serializeContent(args)
@@ -31,10 +31,6 @@ ALC.writeAttributes = function (atts){
     output += ' '+att+'="'+atts[att]+'"' ;
   }
   return output;
-}
-
-ALC.serializeTag = function (tag) {
-  return tag;
 }
 
 ALC.closeTag = function (tag) {
