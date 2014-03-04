@@ -40,7 +40,7 @@ ALC.closeTag = function (tag) {
 ALC.serializeContent = function (content){
   output = '';
   for (var att in content) {
-    output = content[att];
+    output += content[att];
   };
   return output
 }
@@ -63,4 +63,16 @@ div=function() {
 
 span=function() {
   return ALC.tag('span', arguments);
+}
+
+a=function() {
+  return ALC.tag('a', arguments);
+}
+
+ul=function() {
+  return ALC.tag('ul', arguments);
+}
+
+li=function() {
+  return ALC.tag('li', arguments);
 }
