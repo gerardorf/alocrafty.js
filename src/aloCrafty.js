@@ -1,13 +1,13 @@
 var ALC={}
 
-ALC.startMarkUp = '<';
-ALC.endMarkUp = '>';
+ALC.openMarkUp = '<';
+ALC.closeMarkUp = '>';
 
 ALC.tag  = function (tag, args){
-  return ALC.startMarkUp
+  return ALC.openMarkUp
         +tag
         +ALC.serializeAttributes(args)
-        +ALC.endMarkUp
+        +ALC.closeMarkUp
         +ALC.serializeContent(args)
         +ALC.closeTag(tag);
 }
