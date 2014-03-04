@@ -21,4 +21,12 @@ describe("a lo crafty", function() {
     expect(output).toEqual(testHtml);
   });
 
+  it("allows adding a nested tag with attributes", function () {
+    var testHtml='<div class="banner"><span class="title">Jasmine</span></div>';
+    var output = div({class:'banner'},
+                    span({class:'title'},'Jasmine')
+                  );
+    expect(output).toEqual(testHtml);
+  });
+
 });

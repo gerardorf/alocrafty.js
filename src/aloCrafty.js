@@ -60,3 +60,11 @@ title=function() {
 body=function() {
   return ALC.tag('body', arguments);
 }
+
+div=function() {
+  return ALC.tag('div', arguments);
+}
+
+span=function() {
+  return ALC.tag('span', arguments);
+}
