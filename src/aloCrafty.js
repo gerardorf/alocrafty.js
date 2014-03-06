@@ -78,9 +78,12 @@ generateEmptyTags = function () {
   };
 };
 
+generateCommentTag = function(){
+  comment = function (text) {
+    return '<!--'+text+'-->';
+  };
+};
+
 generateTags();
 generateEmptyTags();
-
-comment = function (text) {
-  return '<!--'+text+'-->';
-};
+generateCommentTag();
