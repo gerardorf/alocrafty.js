@@ -19,7 +19,7 @@ ALC.serializeAttributes = function (atts){
 };
 
 ALC.extractAttributes = function (atts){
-  var attributes;
+  var attributes='';
   if (typeof atts[0]==='object'){
     attributes=Array.prototype.shift.call(atts);
   }
@@ -52,7 +52,6 @@ ALC.isPaired = function (tag) {
   return (ALC.unpariedTags.indexOf(tag)<0);
 };
 
-
 generateTag = function(tag) {
   window[tag]  = function(){
     return ALC.tag(tag, arguments);
@@ -60,12 +59,11 @@ generateTag = function(tag) {
 };
 
 generateTags = function () {
-  var tags=['label','html','title','body','div','span','a','ul','li','form','input','p'];
+  var tags=['a','abbr','acronym','address','applet','area','article','aside','audio','b','base','basefont','bdi','bdo','big','blockquote','body','button','anvas','caption','center','cite','code','col','colgroup','command','datalist','dd','del','details','dfn','dialog','dir','div','dl','dt','em','embed','fieldset','figcaption','figure','font','footer','form','frame','frameset','head','header','hgroup','h1','h2','h3','h4','h5','h6','hr','html','i','iframe','img','input','ins','kbd','keygen','label','legend','li','link','main','map','mark','menu','meta','meter','nav','noframes','noscript','object','ol','optgroup','ption','output','p','param','pre','progress','q','rp','rt','ruby','s','samp','script','section','select','small','source','span','strike','strong','tyle','sub','summary','sup','table','tbody','td','textarea','tfoot','th','thead','time','title','tr','track','tt','u','ul','var','video','wbr'];
   for(i in tags){
     generateTag(tags[i]);
   };
 };
-
 
 generateEmptyTag = function (tag) {
   window[tag] = function(){
