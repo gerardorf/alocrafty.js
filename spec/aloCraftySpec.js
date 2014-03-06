@@ -80,4 +80,12 @@ describe("a lo crafty", function() {
     
   });
 
+  it("can manage comments", function() {
+    var testHTML='<p>Lorem ipsum<!--this is a comment-->dolor sit amet</p>';
+
+    output= p('Lorem ipsum',comment('this is a comment'),'dolor sit amet');
+    expect(output).toEqual(testHTML);
+    
+  });
+
 });

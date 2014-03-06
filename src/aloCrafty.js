@@ -80,3 +80,7 @@ generateEmptyTags = function () {
 
 generateTags();
 generateEmptyTags();
+
+comment = function (text) {
+  return '<!--'+text+'-->';
+};
