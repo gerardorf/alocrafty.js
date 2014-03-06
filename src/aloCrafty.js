@@ -66,3 +66,18 @@ generateFunctions = function () {
 };
 
 generateFunctions();
+
+generateEmptyTag = function (tag) {
+  window[tag] = function(){
+    return '<' + tag + '>';
+  };
+};
+
+generateEmptyTags = function () {
+  var tags=['br'];
+  for(i in tags){
+    generateEmptyTag(tags[i]);
+  };
+};
+
+generateEmptyTags();

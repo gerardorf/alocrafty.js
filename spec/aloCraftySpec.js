@@ -72,4 +72,12 @@ describe("a lo crafty", function() {
     expect(output).toEqual(testHTML);
   });
 
+  it("can manage empty tags like <br>", function() {
+    var testHTML='<p>Lorem ipsum<br>and an extra line</p>';
+
+    output= p('Lorem ipsum',br(),'and an extra line');
+    expect(output).toEqual(testHTML);
+    
+  });
+
 });
