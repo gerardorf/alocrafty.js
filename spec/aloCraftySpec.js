@@ -53,7 +53,7 @@ describe("a lo crafty", function() {
     expect(output).toEqual(testHTML);
   });
 
-  it("can manage forms, inputs and selects", function() {
+  it("can manage unpaired tags including forms, inputs and selects", function() {
     var testHTML='<form method="post" id="authentication" action="https://launchpad.37signals.com/authenticate"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="MRUI2cdi2HaGtG88FOQ2z7ZmMJahFVuojHB/o0Mki4M=" name="authenticity_token"></div><input type="hidden" value="highrise" name="product" id="product"><input type="hidden" value="becode" name="subdomain" id="subdomain"><div class="login_form"><p class="password_entry"><label for="username">Username or email</label><input type="text" name="username" id="username" class="user_name" autocorrect="off" autocapitalize="off"></p></div></form>';
 
     output = form({method:'post', id:'authentication', action:'https://launchpad.37signals.com/authenticate'},
