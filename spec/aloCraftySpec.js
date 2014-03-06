@@ -31,7 +31,7 @@ describe("a lo crafty", function() {
   });
 
 
-  it("Can manage sofisticated html", function() {
+  it("can manage sofisticated html", function() {
     var url='http://www.becodemyfriend.com';
     var testHTML='<ul id="dl"><li id="dl_osx"><a href="http://www.becodemyfriend.com">OS X</a>(OS X 10.6 or 10.7 is required)</li><li id="dl_win_32"><a href="http://www.becodemyfriend.com">Windows</a> - also available as a <a href="http://www.becodemyfriend.com">portable version</a></li></ul>';
 
@@ -50,6 +50,25 @@ describe("a lo crafty", function() {
 
               );
 
+    expect(output).toEqual(testHTML);
+  });
+
+  it("can manage forms, inputs and selects", function() {
+    var testHTML='<form method="post" id="authentication" action="https://launchpad.37signals.com/authenticate"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="MRUI2cdi2HaGtG88FOQ2z7ZmMJahFVuojHB/o0Mki4M=" name="authenticity_token"></div><input type="hidden" value="highrise" name="product" id="product"><input type="hidden" value="becode" name="subdomain" id="subdomain"><div class="login_form"><p class="password_entry"><label for="username">Username or email</label><input type="text" name="username" id="username" class="user_name" autocorrect="off" autocapitalize="off"></p></div></form>';
+
+    output = form({method:'post', id:'authentication', action:'https://launchpad.37signals.com/authenticate'},
+                div({style:'margin:0;padding:0;display:inline'},
+                  input({type:'hidden', value:'MRUI2cdi2HaGtG88FOQ2z7ZmMJahFVuojHB/o0Mki4M=', name:'authenticity_token'})
+                ),
+                input({type:'hidden', value:'highrise', name:'product', id:'product'}),
+                input({type:'hidden', value:'becode', name:'subdomain', id:'subdomain'}),
+                div({'class':'login_form'},
+                  p({'class': 'password_entry'},
+                    label({'for':'username'},'Username or email'),
+                    input({type:'text', name:'username', id:'username', 'class':'user_name', autocorrect:'off', autocapitalize:'off'})
+                  )
+                )
+              );
     expect(output).toEqual(testHTML);
   });
 

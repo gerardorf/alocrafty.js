@@ -1,7 +1,8 @@
-var ALC={}
+var ALC={};
 
 ALC.openMarkUp = '<';
 ALC.closeMarkUp = '>';
+ALC.unpariedTags = ['input'];
 
 ALC.tag  = function (tag, args){
   return ALC.openMarkUp
@@ -10,12 +11,12 @@ ALC.tag  = function (tag, args){
         +ALC.closeMarkUp
         +ALC.serializeContent(args)
         +ALC.closeTag(tag);
-}
+};
 
 ALC.serializeAttributes = function (atts){
   attributes = ALC.extractAttributes(atts);
   return ALC.writeAttributes(attributes);
-}
+};
 
 ALC.extractAttributes = function (atts){
   var attributes;
@@ -23,7 +24,7 @@ ALC.extractAttributes = function (atts){
     attributes=Array.prototype.shift.call(atts);
   }
   return attributes;
-}
+};
 
 ALC.writeAttributes = function (atts){
   var output='';
@@ -31,18 +32,24 @@ ALC.writeAttributes = function (atts){
     output += ' '+att+'="'+atts[att]+'"' ;
   }
   return output;
-}
+};
 
 ALC.closeTag = function (tag) {
-  return '</'+tag+'>'
-}
+  var output = ''; 
+  if (ALC.isPaired(tag)) output = '</'+tag+'>';
+  return output;
+};
+
+ALC.isPaired = function (tag) {
+  return (ALC.unpariedTags.indexOf(tag)<0);
+};
 
 ALC.serializeContent = function (content){
   output = '';
   for (var att in content) {
     output += content[att];
   };
-  return output
+  return output;
 }
 
 html=function() {
@@ -75,4 +82,20 @@ ul=function() {
 
 li=function() {
   return ALC.tag('li', arguments);
+}
+
+form=function() {
+  return ALC.tag('form', arguments);
+}
+
+input=function() {
+  return ALC.tag('input', arguments);
+}
+
+p=function() {
+  return ALC.tag('p', arguments);
+}
+
+label=function() {
+  return ALC.tag('label', arguments);
 }
