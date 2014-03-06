@@ -52,20 +52,19 @@ ALC.serializeContent = function (content){
   return output;
 }
 
-generateFunction = function(name) {
-  window[name]  = function(){
-    return ALC.tag(name, arguments);
+generateTag = function(tag) {
+  window[tag]  = function(){
+    return ALC.tag(tag, arguments);
   };
 };
 
-generateFunctions = function () {
+generateTags = function () {
   var tags=['label','html','title','body','div','span','a','ul','li','form','input','p'];
   for(i in tags){
-    generateFunction(tags[i]);
+    generateTag(tags[i]);
   };
 };
 
-generateFunctions();
 
 generateEmptyTag = function (tag) {
   window[tag] = function(){
@@ -80,4 +79,5 @@ generateEmptyTags = function () {
   };
 };
 
+generateTags();
 generateEmptyTags();
