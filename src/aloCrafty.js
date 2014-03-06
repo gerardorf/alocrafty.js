@@ -34,6 +34,14 @@ ALC.writeAttributes = function (atts){
   return output;
 };
 
+ALC.serializeContent = function (content){
+  output = '';
+  for (var att in content) {
+    output += content[att];
+  };
+  return output;
+}
+
 ALC.closeTag = function (tag) {
   var output = ''; 
   if (ALC.isPaired(tag)) output = '</'+tag+'>';
@@ -44,13 +52,6 @@ ALC.isPaired = function (tag) {
   return (ALC.unpariedTags.indexOf(tag)<0);
 };
 
-ALC.serializeContent = function (content){
-  output = '';
-  for (var att in content) {
-    output += content[att];
-  };
-  return output;
-}
 
 generateTag = function(tag) {
   window[tag]  = function(){
