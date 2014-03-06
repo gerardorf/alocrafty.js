@@ -52,50 +52,17 @@ ALC.serializeContent = function (content){
   return output;
 }
 
-html=function() {
-  return ALC.tag('html', arguments);
-}
+generateFunction = function(name) {
+  window[name]  = function(){
+    return ALC.tag(name, arguments);
+  };
+};
 
-title=function() {
-  return ALC.tag('title', arguments);
-}
+generateFunctions = function () {
+  var tags=['label','html','title','body','div','span','a','ul','li','form','input','p'];
+  for(i in tags){
+    generateFunction(tags[i]);
+  };
+};
 
-body=function() {
-  return ALC.tag('body', arguments);
-}
-
-div=function() {
-  return ALC.tag('div', arguments);
-}
-
-span=function() {
-  return ALC.tag('span', arguments);
-}
-
-a=function() {
-  return ALC.tag('a', arguments);
-}
-
-ul=function() {
-  return ALC.tag('ul', arguments);
-}
-
-li=function() {
-  return ALC.tag('li', arguments);
-}
-
-form=function() {
-  return ALC.tag('form', arguments);
-}
-
-input=function() {
-  return ALC.tag('input', arguments);
-}
-
-p=function() {
-  return ALC.tag('p', arguments);
-}
-
-label=function() {
-  return ALC.tag('label', arguments);
-}
+generateFunctions();
