@@ -5,16 +5,16 @@ ALC.closeMarkUp = '>';
 ALC.unpariedTags = ['input'];
 
 ALC.tag  = function (tag, args){
-  return ALC.openMarkUp
-        +tag
-        +ALC.serializeAttributes(args)
-        +ALC.closeMarkUp
-        +ALC.serializeContent(args)
-        +ALC.closeTag(tag);
+  return ALC.openMarkUp+
+        tag+
+        ALC.serializeAttributes(args)+
+        ALC.closeMarkUp+
+        ALC.serializeContent(args)+
+        ALC.closeTag(tag);
 };
 
 ALC.serializeAttributes = function (atts){
-  attributes = ALC.extractAttributes(atts);
+  var attributes = ALC.extractAttributes(atts);
   return ALC.writeAttributes(attributes);
 };
 
@@ -35,12 +35,12 @@ ALC.writeAttributes = function (atts){
 };
 
 ALC.serializeContent = function (content){
-  output = '';
-  for (var att in content) {
-    output += content[att];
-  };
+  var output = '';
+  for (var i = 0, len = content.length; i < len; i++) {
+    output += content[i];
+  }
   return output;
-}
+};
 
 ALC.closeTag = function (tag) {
   var output = ''; 
@@ -52,38 +52,45 @@ ALC.isPaired = function (tag) {
   return (ALC.unpariedTags.indexOf(tag)<0);
 };
 
-generateTag = function(tag) {
+var generateTag = function(tag) {
   window[tag]  = function(){
     return ALC.tag(tag, arguments);
   };
 };
 
-generateTags = function () {
+var generateTags = function () {
   var tags=['a','abbr','acronym','address','applet','area','article','aside','audio','b','base','basefont','bdi','bdo','big','blockquote','body','button','anvas','caption','center','cite','code','col','colgroup','command','datalist','dd','del','details','dfn','dialog','dir','div','dl','dt','em','embed','fieldset','figcaption','figure','font','footer','form','frame','frameset','head','header','hgroup','h1','h2','h3','h4','h5','h6','hr','html','i','iframe','img','input','ins','kbd','keygen','label','legend','li','link','main','map','mark','menu','meta','meter','nav','noframes','noscript','object','ol','optgroup','ption','output','p','param','pre','progress','q','rp','rt','ruby','s','samp','script','section','select','small','source','span','strike','strong','tyle','sub','summary','sup','table','tbody','td','textarea','tfoot','th','thead','time','title','tr','track','tt','u','ul','var','video','wbr'];
-  for(i in tags){
+  for(var i in tags){
     generateTag(tags[i]);
-  };
+  }
 };
 
-generateEmptyTag = function (tag) {
+var generateEmptyTag = function (tag) {
   window[tag] = function(){
     return '<' + tag + '>';
   };
 };
 
-generateEmptyTags = function () {
+var generateEmptyTags = function () {
   var tags=['br'];
-  for(i in tags){
+  for(var i in tags){
     generateEmptyTag(tags[i]);
-  };
+  }
 };
 
-generateCommentTag = function(){
-  comment = function (text) {
+var generateCommentTag = function(tag){
+  window[tag] = function (text) {
     return '<!--'+text+'-->';
   };
 };
 
+var generateCommentTags = function () {
+  var tags=['comment'];
+  for(var i in tags){
+    generateCommentTag(tags[i]);
+  }
+};
+
 generateTags();
 generateEmptyTags();
-generateCommentTag();
+generateCommentTags();
