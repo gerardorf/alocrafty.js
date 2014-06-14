@@ -2,13 +2,15 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    node: grunt.file.readJSON('package.json'),
+
     uglify: {
       options: {
         banner: '/*! aloCrafty.js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
         src: 'src/alocrafty.js',
-        dest: 'dist/alocrafty.min.js'
+        dest: 'dist/alocrafty-<%= node.version %>.min.js'
       }
     },
 
@@ -32,7 +34,7 @@ module.exports = function(grunt) {
           unescape: false
         }
       },
-      files: ['src/alocrafty.js', 'spec/alocraftySpec.js']
+      files: ['src/alocrafty.js']
     },
 
     jasmine: {
