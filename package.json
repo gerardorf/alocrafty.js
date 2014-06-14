@@ -1,0 +1,20 @@
+{
+  "name": "aloCrafty.js",
+  "version": "0.1.0",
+  "description": "alocrafty framework",
+  "main": "src/aloCrafty.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gerardorf/alocrafty.js.git"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "load-grunt-tasks": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-jasmine": "latest"
+  },
+  "author": "Gerardo Rodriguez",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
