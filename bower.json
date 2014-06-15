@@ -19,6 +19,10 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "spec"
+    "spec",
+    "bower.json",
+    "Gruntfile.js",
+    "README.md",
+    "package.json"
   ]
 }
