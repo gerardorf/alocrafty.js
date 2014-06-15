@@ -1,0 +1,25 @@
+{
+  "name": "alocrafty.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/gerardorf/alocrafty.js",
+  "authors": [
+    "xaviuzz",
+    "gerardorf"
+  ],
+  "description": "A javascript library to generate HTML",
+  "main": "src/alocrafty.js",
+  "keywords": [
+    "dsl",
+    "javascript",
+    "html",
+    "generator"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec"
+  ]
+}

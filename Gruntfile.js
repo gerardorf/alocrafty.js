@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
-    node: grunt.file.readJSON('package.json'),
+    bower: grunt.file.readJSON('bower.json'),
 
     uglify: {
       options: {
@@ -10,7 +10,7 @@ module.exports = function(grunt) {
       },
       build: {
         src: 'src/alocrafty.js',
-        dest: 'dist/alocrafty-<%= node.version %>.min.js'
+        dest: 'dist/alocrafty-<%= bower.version %>.min.js'
       }
     },
 
