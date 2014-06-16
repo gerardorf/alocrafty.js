@@ -53,6 +53,6 @@ module.exports = function(grunt) {
   require( 'load-grunt-tasks' )( grunt );
 
   grunt.registerTask('build', [ 'test', 'jshint', 'uglify' ] );
-  grunt.registerTask('test', ['jasmine']);
+  grunt.registerTask('test', ['jshint', 'jasmine']);
   grunt.registerTask('default', ['test']);
 };
