@@ -5,6 +5,7 @@
     "grunt-contrib-jasmine": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
+    "grunt-jscpd": "0.0.10",
     "grunt-template-jasmine-istanbul": "^0.3.0",
     "load-grunt-tasks": "latest"
   }

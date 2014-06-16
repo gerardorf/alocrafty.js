@@ -61,24 +61,29 @@ module.exports = function(grunt) {
               }
             }, {
               type: 'text-summary'
-            },
-            {
+            }, {
               type: 'lcov',
               options: {
                 dir: 'coverage/lcov'
               }
-            } 
-            ]
+            }]
           }
         }
       }
+    },
+
+    jscpd: {
+      javascript: {
+        path: 'src/'
+      }
     }
+
   });
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('build', ['test', 'jshint', 'uglify']);
-  grunt.registerTask('test', ['jshint', 'jasmine']);
+  grunt.registerTask('test', ['jshint', 'jasmine', 'jscpd']);
   grunt.registerTask('default', ['test']);
 };
