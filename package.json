@@ -2,9 +2,10 @@
   "name": "aloCrafty.js",
   "devDependencies": {
     "grunt": "latest",
-    "load-grunt-tasks": "latest",
+    "grunt-contrib-jasmine": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
-    "grunt-contrib-jasmine": "latest"
+    "grunt-template-jasmine-istanbul": "^0.3.0",
+    "load-grunt-tasks": "latest"
   }
 }

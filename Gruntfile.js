@@ -39,20 +39,39 @@ module.exports = function(grunt) {
 
     jasmine: {
       test: {
-        src:'src/*.js', 
+        src: 'src/*.js',
         options: {
           specs: [
             'spec/*Spec.js'
           ],
+        }
+      },
+
+      istanbul: {
+        src: '<%= jasmine.test.src %>',
+        options: {
+          specs: '<%= jasmine.test.options.specs %>',
+          template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'coverage/json/coverage.json',
+            report: [{
+              type: 'html',
+              options: {
+                dir: 'coverage/html'
+              }
+            }, {
+              type: 'text-summary'
+            }]
+          }
         }
       }
     }
   });
 
   // Load grunt tasks automatically
-  require( 'load-grunt-tasks' )( grunt );
+  require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('build', [ 'test', 'jshint', 'uglify' ] );
+  grunt.registerTask('build', ['test', 'jshint', 'uglify']);
   grunt.registerTask('test', ['jshint', 'jasmine']);
   grunt.registerTask('default', ['test']);
 };
