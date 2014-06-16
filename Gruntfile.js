@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         banner: '/*! aloCrafty.js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'src/alocrafty.js',
+        src: 'src/*.js',
         dest: 'dist/alocrafty-<%= bower.version %>.min.js'
       }
     },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
           unescape: false
         }
       },
-      files: ['src/alocrafty.js']
+      files: ['src/*.js']
     },
 
     jasmine: {
@@ -84,6 +84,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('build', ['test', 'jshint', 'uglify']);
-  grunt.registerTask('test', ['jshint', 'jasmine', 'jscpd']);
+  grunt.registerTask('test', ['jshint', 'jasmine:test']);
+  grunt.registerTask('metrics', ['jshint', 'jasmine:istanbul', 'jscpd']);
   grunt.registerTask('default', ['test']);
 };
