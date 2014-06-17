@@ -2,6 +2,7 @@
   "name": "aloCrafty.js",
   "devDependencies": {
     "grunt": "latest",
+    "grunt-complexity": "^0.1.71",
     "grunt-contrib-jasmine": "latest",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",

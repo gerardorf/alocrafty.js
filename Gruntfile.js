@@ -55,6 +55,20 @@ module.exports = function(grunt) {
       javascript: {
         path: 'src/'
       }
+    },
+
+    complexity: {
+      generic: {
+        src: 'src/*.js',
+        options: {
+          breakOnErrors: false,
+          errorsOnly: false,
+          cyclomatic: [3, 7, 12],
+          halstead: [8, 13, 20],
+          maintainability: 100,
+          hideComplexFunctions: false
+        }
+      }
     }
 
   });
@@ -63,7 +77,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('build', ['test', 'uglify']);
-  grunt.registerTask('test', ['jasmine:test']);
-  grunt.registerTask('metrics', ['jasmine:istanbul', 'jscpd']);
+  grunt.registerTask('test', ['jshint', 'jasmine:test']);
+  grunt.registerTask('metrics', ['jshint', 'jasmine:istanbul', 'jscpd', 'complexity']);
   grunt.registerTask('default', ['test']);
 };
