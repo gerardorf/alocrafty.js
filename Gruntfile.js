@@ -16,23 +16,7 @@ module.exports = function(grunt) {
 
     jshint: {
       options: {
-        curly: false,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        eqnull: true,
-        browser: true,
-        expr: true,
-        globals: {
-          head: false,
-          module: false,
-          console: false,
-          unescape: false
-        }
+        jshintrc: '.jshintrc'
       },
       files: ['src/*.js']
     },
@@ -78,8 +62,8 @@ module.exports = function(grunt) {
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerTask('build', ['test', 'jshint', 'uglify']);
-  grunt.registerTask('test', ['jshint', 'jasmine:test']);
-  grunt.registerTask('metrics', ['jshint', 'jasmine:istanbul', 'jscpd']);
+  grunt.registerTask('build', ['test', 'uglify']);
+  grunt.registerTask('test', ['jasmine:test']);
+  grunt.registerTask('metrics', ['jasmine:istanbul', 'jscpd']);
   grunt.registerTask('default', ['test']);
 };
