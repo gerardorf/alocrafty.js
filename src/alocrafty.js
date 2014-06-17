@@ -44,7 +44,7 @@ ALC.serializeContent = function (content){
 
 ALC.closeTag = function (tag) {
   var output = ''; 
-  if (ALC.isPaired(tag)) output = '</'+tag+'>';
+  if (ALC.isPaired(tag)) {output = '</'+tag+'>';}
   return output;
 };
 
