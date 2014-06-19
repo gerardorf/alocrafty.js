@@ -77,7 +77,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('build', ['test', 'uglify']);
-  grunt.registerTask('test', ['jshint', 'jasmine:test']);
+  grunt.registerTask('test', ['jasmine:test']);
   grunt.registerTask('metrics', ['jshint', 'jasmine:istanbul', 'jscpd', 'complexity']);
   grunt.registerTask('default', ['test']);
 };

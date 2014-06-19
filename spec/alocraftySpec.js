@@ -35,7 +35,7 @@ describe("a lo crafty", function() {
     var url='http://www.becodemyfriend.com';
     var testHTML='<ul id="dl"><li id="dl_osx"><a href="http://www.becodemyfriend.com">OS X</a>(OS X 10.6 or 10.7 is required)</li><li id="dl_win_32"><a href="http://www.becodemyfriend.com">Windows</a> - also available as a <a href="http://www.becodemyfriend.com">portable version</a></li></ul>';
 
-    output =  ul({id:"dl"},
+    var output =  ul({id:"dl"},
 
                 li({id:"dl_osx"},
                   a({href: url},'OS X'),
@@ -56,7 +56,7 @@ describe("a lo crafty", function() {
   it("can manage unpaired tags including forms, inputs and selects", function() {
     var testHTML='<form method="post" id="authentication" action="https://launchpad.37signals.com/authenticate"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="MRUI2cdi2HaGtG88FOQ2z7ZmMJahFVuojHB/o0Mki4M=" name="authenticity_token"></div><input type="hidden" value="highrise" name="product" id="product"><input type="hidden" value="becode" name="subdomain" id="subdomain"><div class="login_form"><p class="password_entry"><label for="username">Username or email</label><input type="text" name="username" id="username" class="user_name" autocorrect="off" autocapitalize="off"></p></div></form>';
 
-    output = form({method:'post', id:'authentication', action:'https://launchpad.37signals.com/authenticate'},
+    var output = form({method:'post', id:'authentication', action:'https://launchpad.37signals.com/authenticate'},
                 div({style:'margin:0;padding:0;display:inline'},
                   input({type:'hidden', value:'MRUI2cdi2HaGtG88FOQ2z7ZmMJahFVuojHB/o0Mki4M=', name:'authenticity_token'})
                 ),
@@ -75,7 +75,7 @@ describe("a lo crafty", function() {
   it("can manage empty tags like <br>", function() {
     var testHTML='<p>Lorem ipsum<br>and an extra line</p>';
 
-    output= p('Lorem ipsum',br(),'and an extra line');
+    var output= p('Lorem ipsum',br(),'and an extra line');
     expect(output).toEqual(testHTML);
     
   });
@@ -83,7 +83,7 @@ describe("a lo crafty", function() {
   it("can manage comments", function() {
     var testHTML='<p>Lorem ipsum<!--this is a comment-->dolor sit amet</p>';
 
-    output= p('Lorem ipsum',comment('this is a comment'),'dolor sit amet');
+    var output= p('Lorem ipsum',comment('this is a comment'),'dolor sit amet');
     expect(output).toEqual(testHTML);
     
   });
