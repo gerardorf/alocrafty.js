@@ -1,96 +1,114 @@
-var ALC={};
+var alc= (function (){
 
-ALC.openMarkUp = '<';
-ALC.closeMarkUp = '>';
-ALC.unpariedTags = ['input'];
+  var _openMarkUp = '<';
+  var _closeMarkUp = '>';
+  var _unpariedTags = ['input'];
 
-ALC.tag  = function (tag, args){
-  return ALC.openMarkUp+
-        tag+
-        ALC.serializeAttributes(args)+
-        ALC.closeMarkUp+
-        ALC.serializeContent(args)+
-        ALC.closeTag(tag);
-};
-
-ALC.serializeAttributes = function (atts){
-  var attributes = ALC.extractAttributes(atts);
-  return ALC.writeAttributes(attributes);
-};
-
-ALC.extractAttributes = function (atts){
-  var attributes='';
-  if (typeof atts[0]==='object'){
-    attributes=Array.prototype.shift.call(atts);
+  function _tag(tag, args){
+    return _openMarkUp+
+          tag+
+          _serializeAttributes(args)+
+          _closeMarkUp+
+          _serializeContent(args)+
+          _closeTag(tag);
   }
-  return attributes;
-};
 
-ALC.writeAttributes = function (atts){
-  var output='';
-  for (var att in atts){
-    output += ' '+att+'="'+atts[att]+'"' ;
+  function _serializeAttributes(atts){
+    var attributes = _extractAttributes(atts);
+    return _writeAttributes(attributes);
   }
-  return output;
-};
 
-ALC.serializeContent = function (content){
-  var output = '';
-  for (var i = 0, len = content.length; i < len; i++) {
-    output += content[i];
+  function _extractAttributes(atts){
+    var attributes='';
+    if (typeof atts[0]==='object'){
+      attributes=Array.prototype.shift.call(atts);
+    }
+    return attributes;
   }
-  return output;
-};
 
-ALC.closeTag = function (tag) {
-  var output = ''; 
-  if (ALC.isPaired(tag)) {output = '</'+tag+'>';}
-  return output;
-};
+  function _writeAttributes(atts){
+    var output='';
+    for (var att in atts){
+      output += ' '+att+'="'+atts[att]+'"' ;
+    }
+    return output;
+  }
 
-ALC.isPaired = function (tag) {
-  return (ALC.unpariedTags.indexOf(tag)<0);
-};
+  function _serializeContent(content){
+    var output = '';
+    for (var i = 0, len = content.length; i < len; i++) {
+      output += content[i];
+    }
+    return output;
+  }
 
-var generateTag = function(tag) {
-  window[tag]  = function(){
-    return ALC.tag(tag, arguments);
+  function _closeTag(tag) {
+    var output = ''; 
+    if (_isPaired(tag)) {output = '</'+tag+'>';}
+    return output;
+  }
+
+  function _isPaired(tag) {
+    return (_unpariedTags.indexOf(tag)<0);
+  }
+
+  return {
+    tag: _tag
   };
-};
 
-var generateTags = function () {
-  var tags=['a','abbr','acronym','address','applet','area','article','aside','audio','b','base','basefont','bdi','bdo','big','blockquote','body','button','anvas','caption','center','cite','code','col','colgroup','command','datalist','dd','del','details','dfn','dialog','dir','div','dl','dt','em','embed','fieldset','figcaption','figure','font','footer','form','frame','frameset','head','header','hgroup','h1','h2','h3','h4','h5','h6','hr','html','i','iframe','img','input','ins','kbd','keygen','label','legend','li','link','main','map','mark','menu','meta','meter','nav','noframes','noscript','object','ol','optgroup','ption','output','p','param','pre','progress','q','rp','rt','ruby','s','samp','script','section','select','small','source','span','strike','strong','tyle','sub','summary','sup','table','tbody','td','textarea','tfoot','th','thead','time','title','tr','track','tt','u','ul','var','video','wbr'];
-  for(var i in tags){
-    generateTag(tags[i]);
+})();
+
+var tags = (function(){
+  function _generateRegularTag(tag) {
+    window[tag]  = function(){
+      return alc.tag(tag, arguments);
+    };
   }
-};
 
-var generateEmptyTag = function (tag) {
-  window[tag] = function(){
-    return '<' + tag + '>';
+  function _populateRegularTags() {
+    console.log('try to generate tags');
+    var tags=['a','abbr','acronym','address','applet','area','article','aside','audio','b','base','basefont','bdi','bdo','big','blockquote','body','button','anvas','caption','center','cite','code','col','colgroup','command','datalist','dd','del','details','dfn','dialog','dir','div','dl','dt','em','embed','fieldset','figcaption','figure','font','footer','form','frame','frameset','head','header','hgroup','h1','h2','h3','h4','h5','h6','hr','html','i','iframe','img','input','ins','kbd','keygen','label','legend','li','link','main','map','mark','menu','meta','meter','nav','noframes','noscript','object','ol','optgroup','ption','output','p','param','pre','progress','q','rp','rt','ruby','s','samp','script','section','select','small','source','span','strike','strong','tyle','sub','summary','sup','table','tbody','td','textarea','tfoot','th','thead','time','title','tr','track','tt','u','ul','var','video','wbr'];
+    for(var i in tags){
+      _generateRegularTag(tags[i]);
+    }
+  }
+
+  function _generateEmptyTags(tag) {
+    window[tag] = function(){
+      return '<' + tag + '>';
+    };
+  }
+
+  function _populateEmptyTags() {
+    var tags=['br'];
+    for(var i in tags){
+      _generateEmptyTags(tags[i]);
+    }
+  }
+
+  function _generateCommentTag(tag){
+    window[tag] = function (text) {
+      return '<!--'+text+'-->';
+    };
+  }
+
+  function _populateCommentTag() {
+    var tags=['comment'];
+    for(var i in tags){
+      _generateCommentTag(tags[i]);
+    }
+  }
+
+  function _populateHTMLTags() {
+    _populateRegularTags();
+    _populateEmptyTags();
+    _populateCommentTag();
+  }
+
+  return {
+    populateHTMLTags: _populateHTMLTags
   };
-};
 
-var generateEmptyTags = function () {
-  var tags=['br'];
-  for(var i in tags){
-    generateEmptyTag(tags[i]);
-  }
-};
+})();
 
-var generateCommentTag = function(tag){
-  window[tag] = function (text) {
-    return '<!--'+text+'-->';
-  };
-};
-
-var generateCommentTags = function () {
-  var tags=['comment'];
-  for(var i in tags){
-    generateCommentTag(tags[i]);
-  }
-};
-
-generateTags();
-generateEmptyTags();
-generateCommentTags();
+tags.populateHTMLTags();
