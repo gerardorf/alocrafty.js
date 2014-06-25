@@ -1,5 +1,6 @@
 {
-  "name": "aloCrafty.js",
+  "name": "alocrafty.js",
+  "version": "0.1.0",
   "devDependencies": {
     "grunt": "latest",
     "grunt-complexity": "^0.1.71",
