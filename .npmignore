@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+spec/
+.jshintrc
+.travis.yml
+.gitignore
+README.md
+bower.json
+Gruntfile.js
