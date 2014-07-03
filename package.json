@@ -1,5 +1,6 @@
 {
   "name": "alocrafty.js",
+  "version": "0.0.0",
   "description": "Quit messing up your perfectly formatted javascript code with html",
   "main": "src/alocrafty.js",
   "devDependencies": {
@@ -30,6 +31,5 @@
   "bugs": {
     "url": "https://github.com/gerardorf/alocrafty.js/issues"
   },
-  "homepage": "https://github.com/gerardorf/alocrafty.js",
-  "version": "0.1.0"
+  "homepage": "https://github.com/gerardorf/alocrafty.js"
 }
