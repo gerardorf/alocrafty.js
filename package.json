@@ -1,6 +1,5 @@
 {
   "name": "alocrafty.js",
-  "version": "0.1.0",
   "description": "Quit messing up your perfectly formatted javascript code with html",
   "main": "src/alocrafty.js",
   "devDependencies": {
