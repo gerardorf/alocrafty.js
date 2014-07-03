@@ -6,7 +6,7 @@
     "xaviuzz",
     "gerardorf"
   ],
-  "description": "A javascript library to generate HTML",
+  "description": "Quit messing up your perfectly formatted javascript code with html",
   "main": "src/alocrafty.js",
   "keywords": [
     "dsl",
@@ -14,7 +14,7 @@
     "html",
     "generator"
   ],
-  "license": "MIT",
+  "license": "GPLv3",
   "ignore": [
     "**/.*",
     "node_modules",

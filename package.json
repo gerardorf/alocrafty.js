@@ -1,14 +1,35 @@
 {
   "name": "alocrafty.js",
   "version": "0.1.0",
+  "description": "Quit messing up your perfectly formatted javascript code with html",
+  "main": "src/alocrafty.js",
   "devDependencies": {
-    "grunt": "latest",
+    "grunt": "^0.4.5",
     "grunt-complexity": "^0.1.71",
-    "grunt-contrib-jasmine": "latest",
-    "grunt-contrib-jshint": "latest",
-    "grunt-contrib-uglify": "latest",
-    "grunt-jscpd": "0.0.10",
+    "grunt-contrib-jasmine": "^0.6.5",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
+    "grunt-jscpd": "^0.0.10",
     "grunt-template-jasmine-istanbul": "^0.3.0",
-    "load-grunt-tasks": "latest"
-  }
+    "load-grunt-tasks": "^0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gerardorf/alocrafty.js.git"
+  },
+  "keywords": [
+    "dsl",
+    "javascript",
+    "html",
+    "generator"
+  ],
+  "author": "xaviuzz & gerardorf",
+  "license": "GPLv3",
+  "bugs": {
+    "url": "https://github.com/gerardorf/alocrafty.js/issues"
+  },
+  "homepage": "https://github.com/gerardorf/alocrafty.js"
 }
