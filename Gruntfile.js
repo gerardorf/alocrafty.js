@@ -5,9 +5,6 @@ module.exports = function(grunt) {
     bower: grunt.file.readJSON('bower.json'),
 
     uglify: {
-      options: {
-        banner: '/*! aloCrafty.js <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
       build: {
         src: 'src/*.js',
         dest: 'dist/alocrafty-<%= bower.version %>.min.js'

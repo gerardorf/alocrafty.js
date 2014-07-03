@@ -74,35 +74,21 @@ var aloCrafty = (function (){
       }
     }
 
-    function _generateEmptyTags(tag, namespace) {
-      namespace[tag] = function(){
-        return '<' + tag + '>';
+    function _populateBrTag(namespace) {
+      namespace.br = function(){
+        return '<br>';
       };
     }
 
-    function _populateEmptyTags(namespace) {
-      var tags=['br'];
-      for(var i in tags){
-        _generateEmptyTags(tags[i], namespace);
-      }
-    }
-
-    function _generateCommentTag(tag, namespace){
-      namespace[tag] = function (text) {
-        return '<!--'+text+'-->';
+    function _populateCommentTag(namespace){
+      namespace.comment = function (text) {
+        return '<!--' + text + '-->';
       };
-    }
-
-    function _populateCommentTag(namespace) {
-      var tags=['comment'];
-      for(var i in tags){
-        _generateCommentTag(tags[i], namespace);
-      }
     }
 
     function _populateHTMLTags(namespace) {
       _populateRegularTags(namespace);
-      _populateEmptyTags(namespace);
+      _populateBrTag(namespace);
       _populateCommentTag(namespace);
     }
 
