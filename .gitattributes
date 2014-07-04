@@ -1,0 +1,8 @@
+**/.* export-ignore
+coverage export-ignore
+node_modules export-ignore
+spec export-ignore
+Gruntfile.js export-ignore
+README.md export-ignore
+bower.json export-ignore
+package.json export-ignore
