@@ -52,7 +52,6 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
     background-color: #D00A0A;
 }
 
@@ -60,6 +59,34 @@ body {
     color: #F77000;
 }
 
+
+.panel-shell {
+  border-color: #DDDDDD;
+  background-color: #3D3D3D;
+}
+
+.panel-shell > .panel-heading {
+  background-color: #F7F7F7;
+  background-image: -moz-linear-gradient(center top , #F7F7F7 0%, #CFCFCF 7%, #AAAAAA 100%);
+}
+
+.panel-shell > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #428bca;
+}
+
+.panel-shell > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #428bca;
+}
+
+.path{
+    color: #87CEEB;
+}
+.prompt{
+    color: #CD5C5C;
+}
+.command{
+    color: #F0E68C;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
