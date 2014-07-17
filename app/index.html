@@ -5,7 +5,7 @@
         <title>aloCrafty.js</title>
         <meta name="description" content="aloCrafty.js Quit messing up your perfectly formatted javascript code with html">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico"> 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -13,8 +13,15 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/solarized_dark.min.css">
+        <script type="text/JavaScript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
     </head>
     <body>
         <!--[if lt IE 10]>
@@ -64,7 +71,9 @@
                         <p class="panel-title">HTML</p>
                     </div>
                     <div class="panel-body">
-                        <code>div sample</code>
+                        <pre><code class="html">&lt;div class="div-test"&gt;
+    &lt;p&gt;lore ipsum&lt;/p&gt;
+&lt;/div&gt;</code></pre>
                     </div>
                 </div>
             </div>
@@ -74,7 +83,9 @@
                         <p class="panel-title">aloCrafty.js</p>
                     </div>
                     <div class="panel-body">
-                        <code>div sample</code>
+                        <pre><code class="javascript">a.div({class:"div-test"},
+  a.p('lore ipsum')
+);</code></pre>
                     </div>
                 </div>
             </div>
