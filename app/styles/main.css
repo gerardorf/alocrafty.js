@@ -12,22 +12,13 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.nav,
+.navbar,
 .history,
 .samples,
 .download,
 .footer {
     padding-left: 15px;
     padding-right: 15px;
-}
-
-/* Custom page header */
-.nav {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.nav li {
-  display: inline;
 }
 
 /* Make the masthead heading the same height as the navigation */
@@ -40,8 +31,9 @@ body {
 
 /* Custom page footer */
 .footer {
-    padding-top: 19px;
-    color: #777;
+    padding-top: 10px;
+    color: #FFF;
+    background-color: #000;
     border-top: 1px solid #e5e5e5;
 }
 
@@ -66,8 +58,9 @@ body {
 }
 
 .panel-shell > .panel-heading {
-  background-color: #F7F7F7;
-  background-image: -moz-linear-gradient(center top , #F7F7F7 0%, #CFCFCF 7%, #AAAAAA 100%);
+  padding: 0px 15px;
+  background-color: #F7F7F7;*/
+  background-image: -moz-linear-gradient(to bottom right, red, rgba(255,0,0,0));
 }
 
 .panel-shell > .panel-heading + .panel-collapse .panel-body {
@@ -88,31 +81,6 @@ body {
     color: #F0E68C;
 }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
