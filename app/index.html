@@ -5,7 +5,7 @@
         <title>aloCrafty.js</title>
         <meta name="description" content="aloCrafty.js Quit messing up your perfectly formatted javascript code with html">
         <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico"> 
+        <link rel="shortcut icon" href="/favicon.ico">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -18,9 +18,8 @@
         <!-- endbuild -->
         <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/solarized_dark.min.css">
         <script type="text/JavaScript" src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
-
         <script>
-            hljs.initHighlightingOnLoad();
+        hljs.initHighlightingOnLoad();
         </script>
     </head>
     <body>
@@ -60,7 +59,12 @@
                         <p class="panel-title">Sample usage</p>
                     </div>
                     <div class="panel-body">
-                        <code>div sample</code>
+                        <pre><code class="javascript">//create an empty object and populate it
+var a = {};
+aloCrafty.populate(a);
+//That's all!
+//now your object has all html tags defined as functions so you can start usin aloCrafty.js
+</code></pre>
                     </div>
                 </div>
             </div>
@@ -72,7 +76,7 @@
                     </div>
                     <div class="panel-body">
                         <pre><code class="html">&lt;div class="div-test"&gt;
-    &lt;p&gt;lore ipsum&lt;/p&gt;
+    &lt;p&gt;Chanante ipsum dolor sit amet, ahí va qué chorrazo, soooy crossoverr ullamco tontaco sed exercitation ea labore. Ad quis minim. Pero qué pelazo, ex ut tunante agazapao nostrud eiusmod artista et payacho adipisicing minim.&lt;/p&gt;
 &lt;/div&gt;</code></pre>
                     </div>
                 </div>
@@ -83,8 +87,8 @@
                         <p class="panel-title">aloCrafty.js</p>
                     </div>
                     <div class="panel-body">
-                        <pre><code class="javascript">a.div({class:"div-test"},
-  a.p('lore ipsum')
+                        <pre><code class="javascript">a.div({class:'div-test'},
+  a.p('Chanante ipsum dolor sit amet, ahí va qué chorrazo, soooy crossoverr ullamco tontaco sed exercitation ea labore. Ad quis minim. Pero qué pelazo, ex ut tunante agazapao nostrud eiusmod artista et payacho adipisicing minim.')
 );</code></pre>
                     </div>
                 </div>
@@ -95,7 +99,10 @@
                         <p class="panel-title">HTML</p>
                     </div>
                     <div class="panel-body">
-                        <code>ul sample</code>
+                        <pre><code>&lt;ul id="ul-chanante"&gt;
+    &lt;li id="bufonesco"&gt;cabeza de viejo cuerpo de joven&lt;/li&gt;
+    &lt;li id="bocaseca"&gt;vivo con tu madre en un castillo&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
                     </div>
                 </div>
             </div>
@@ -105,7 +112,10 @@
                         <p class="panel-title">aloCrafty.js</p>
                     </div>
                     <div class="panel-body">
-                        <code>ul sample</code>
+                        <pre><code>a.ul({id:"ul-chanante"},
+  a.li({id:"bufonesco"},'cabeza de viejo cuerpo de joven'),
+  a.li({id:"bocaseca"},'vivo con tu madre en un castillo')
+);</code></pre>
                     </div>
                 </div>
             </div>
@@ -132,7 +142,7 @@
         </div>
         <div id="download" class="download">
             <h3>Download</h3>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="panel panel-shell">
                     <div class="panel-heading">
                         <p class="panel-title">Download with npm</p>
@@ -144,7 +154,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <div class="panel panel-shell">
                     <div class="panel-heading">
                         <p class="panel-title">Download with bower</p>
@@ -157,27 +167,14 @@
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="panel panel-shell">
-                    <div class="panel-heading">
-                        <p class="panel-title">Download zip file</p>
+                <div>
+                    <div class="input-group">
+                    aloCrafty.0.1.1.zip<button type="button" class="btn btn-circle"><i class="glyphicon glyphicon-cloud-download"></i></button>
                     </div>
-                    <div class="panel-body">
-                        <span class="path">~</span>
-                        <span class="prompt">$</span>
-                        <span class="command">curl https://github....</span>
-                    </div>
+
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="panel panel-shell">
-                    <div class="panel-heading">
-                        <p class="panel-title">Download tar.gz file</p>
-                    </div>
-                    <div class="panel-body">
-                        <span class="path">~</span>
-                        <span class="prompt">$</span>
-                        <span class="command">curl https://github....</span>
-                    </div>
+                <div>
+                    aloCrafty.0.1.1.tar.gz<button type="button" class="btn btn-circle"><i class="glyphicon glyphicon-cloud-download"></i></button>
                 </div>
             </div>
         </div>
