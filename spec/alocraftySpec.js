@@ -1,4 +1,4 @@
-describe("a lo crafty", function() {
+describe("aloCrafty.js", function() {
 
   var a = {};
   aloCrafty.populate(a);
