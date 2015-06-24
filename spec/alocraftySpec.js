@@ -90,4 +90,14 @@ describe("aloCrafty.js", function() {
     expect(output).toEqual(testHTML);
     
   });
+
+  it("can manage option", function(){
+    var testHTML='<select><option value="volvo">Volvo</option><option value="saab">Saab</option></select>';
+
+    var output=a.select(
+                a.option({value: 'volvo'}, 'Volvo'),
+                a.option({value: 'saab'}, 'Saab')
+              );
+    expect(output).toEqual(testHTML);
+  });
 });
