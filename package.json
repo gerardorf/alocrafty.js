@@ -4,14 +4,14 @@
   "description": "Quit messing up your perfectly formatted javascript code with html",
   "main": "src/alocrafty.js",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-complexity": "^0.1.71",
-    "grunt-contrib-jasmine": "^0.6.5",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-uglify": "^0.5.0",
-    "grunt-jscpd": "^0.0.10",
-    "grunt-template-jasmine-istanbul": "^0.3.0",
-    "load-grunt-tasks": "^0.6.0"
+    "grunt": "^1.0.1",
+    "grunt-complexity": "^1.0.1",
+    "grunt-contrib-jasmine": "^1.0.3",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-jscpd": "^0.0.12",
+    "grunt-template-jasmine-istanbul": "^0.5.0",
+    "load-grunt-tasks": "^3.5.2"
   },
   "scripts": {
     "test": "grunt test"
